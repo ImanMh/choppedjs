@@ -1,5 +1,5 @@
 {
-  "name": "Chopped",
+  "name": "choppedjs",
   "version": "0.0.0",
   "description": "A minimal library for handeling cirtical events in browsers",
   "license": "MIT",
