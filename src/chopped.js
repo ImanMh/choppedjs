@@ -3,12 +3,24 @@
 
   window.choppedjs = {};
 
-  choppedjs.onEvent = function (eventType, handler, timeout, options) {
+  function extend(){
+    for(var i=1; i<arguments.length; i++)
+    for(var key in arguments[i])
+      if(arguments[i].hasOwnProperty(key))
+        arguments[0][key] = arguments[i][key];
+    return arguments[0];
+  }
+  
+  choppedjs.onEvent = function (eventType, handler, timeout, config) {
+    var defaults = {
+      name: 'unnamed',
+      immediate: false
+    };
+    this.options = extend({}, defaults, config);
     this.eventType = eventType;
     this.timeout = timeout;
     this.handler = handler;
-    this.name = name || 'unnamed';
-    this.isExecuteTime = true;
+    this.isExecuteTime = this.options.immediate;
     this.interval = '';
     var _this = this;
     init();
