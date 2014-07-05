@@ -11,7 +11,8 @@ Here are a few sample codes that demonstrate usage of choppedJS
 
 
 first inculde jQuery(jQuery dependency would be removed in feauture) then chopped.js
-<code>
+
+```javascript
   function myScrollRelatedFunc () {
     //You may want to do stuff here that takes some CPU
   }
@@ -26,4 +27,5 @@ first inculde jQuery(jQuery dependency would be removed in feauture) then choppe
 
   choppedjs.onResize(myResizeRelatedFunc, 500);
   choppedjs.onMouseMove(myMouseMoveRelatedFunc, 10);
-</code>
+
+```
