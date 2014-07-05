@@ -14,7 +14,7 @@
   choppedjs.onEvent = function (eventType, handler, timeout, config) {
     var defaults = {
       name: 'unnamed',
-      immediate: false
+      immediate: true
     };
     this.options = extend({}, defaults, config);
     this.eventType = eventType;
@@ -55,4 +55,8 @@
     return new choppedjs.onEvent('resize', handler, timeout, options);
   };
 
+  choppedjs.onMousemove = function (handler, timeout, options) {
+    return new choppedjs.onEvent('mousemove', handler, timeout, options);
+  };
+  
 }());
