@@ -34,7 +34,7 @@ first inculde jQuery(jQuery dependency would be removed in feauture) then choppe
   });
   $(document).ready(function () {
     if (ifNeeded())
-      trr.options.mute = true;
+      trr.options.mute = false;
   });
 
 ```
