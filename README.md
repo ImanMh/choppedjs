@@ -17,7 +17,7 @@ first inculde jQuery(jQuery dependency would be removed in feauture) then choppe
     //You may want to do stuff here that takes some CPU
   }
 
-  //handler passed will be executed the once here and every 250ms when you are scrolling
+  //handler passed will be executed once right away and then every 250ms while you are scrolling
   choppedjs.onScroll(myScrollRelatedFunc, 250);
   //handler wouldn't be executed until you begin scrolling
   choppedjs.onScroll(myOtherScrollRelatedFunc, 100, {
