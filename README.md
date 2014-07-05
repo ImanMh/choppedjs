@@ -26,6 +26,6 @@ first inculde jQuery(jQuery dependency would be removed in feauture) then choppe
 
 
   choppedjs.onResize(myResizeRelatedFunc, 500);
-  choppedjs.onMouseMove(myMouseMoveRelatedFunc, 10);
+  choppedjs.onMousemove(myMouseMoveRelatedFunc, 10);
 
 ```
