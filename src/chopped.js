@@ -14,6 +14,7 @@
   choppedjs.onEvent = function (eventType, handler, timeout, config) {
     var defaults = {
       name: 'unnamed',
+      mute: false,
       immediate: true
     };
     this.options = extend({}, defaults, config);
@@ -33,7 +34,7 @@
 
       //execute the handler based on the timeout user passed
       _this.interval = setInterval(function () {
-        if (_this.isExecuteTime) {
+        if (_this.isExecuteTime && !_this.options.mute) {
           try {
             handler();
           } catch (err) {
