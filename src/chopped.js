@@ -15,7 +15,8 @@
     var defaults = {
       name: 'unnamed',
       mute: false,
-      immediate: true
+      immediate: true,
+      onlyEdges: false
     };
     this.options = extend({}, defaults, config);
     this.eventType = eventType;
@@ -23,6 +24,8 @@
     this.handler = handler;
     this.isExecuteTime = this.options.immediate;
     this.interval = '';
+    this.edgeTimeout = '';
+
     var _this = this;
     init();
 
@@ -30,8 +33,15 @@
       //reset the execute determiner
       $(window)[_this.eventType](function () {
         _this.isExecuteTime = true;
+        _this.isOnEdge = false;
       });
 
+      if (_this.options.onlyEdges) {
+        setTimeout(function () {
+          _this.isOnEdge = true;
+        }, _this.options.maxWait);
+      }
+      
       //execute the handler based on the timeout user passed
       _this.interval = setInterval(function () {
         if (_this.isExecuteTime && !_this.options.mute) {
@@ -58,6 +68,10 @@
 
   choppedjs.onMousemove = function (handler, timeout, options) {
     return new choppedjs.onEvent('mousemove', handler, timeout, options);
+  };
+  
+  choppedjs.onKeypress = function (handler, timeout, options) {
+    return new choppedjs.onEvent('keypress', handler, timeout, options);
   };
   
 }());

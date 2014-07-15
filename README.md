@@ -34,6 +34,7 @@ first inculde jQuery(jQuery dependency would be removed in feauture) then choppe
 
   choppedjs.onResize(myResizeRelatedFunc, 500);
   choppedjs.onMousemove(myMouseMoveRelatedFunc, 10);
+  choppedjs.onKeypress(myKeyboardRelatedFunc, 5000);
 
   //will create a chopped event that will be activated progromatically
   var trr = choppedjs.onMosemove(myMouseMoveRelatedFunc, 10, {
